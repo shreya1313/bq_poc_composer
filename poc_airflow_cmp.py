@@ -54,6 +54,7 @@ with models.DAG(
         image="gcr.io/graphical-elf-309911/demoapp1",
         image_pull_policy='Always',
         name="airflow-test-pod-dev",
+        is_delete_operator_pod=True
     )
     # [END gke_start_pod_operator]
     
@@ -66,6 +67,7 @@ with models.DAG(
         image="gcr.io/graphical-elf-309911/bqapp",
         image_pull_policy='Always'
         name="airflow-test-pod-test",
+        is_delete_operator_pod=True
     )
 
     pod_task_dev >> pod_task_test

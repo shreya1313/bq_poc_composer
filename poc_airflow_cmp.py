@@ -65,7 +65,7 @@ with models.DAG(
         cluster_name=CLUSTER_NAME,
         namespace="test",
         image="gcr.io/graphical-elf-309911/bqapp",
-        image_pull_policy='Always'
+        image_pull_policy='Always',
         name="airflow-test-pod-test",
         is_delete_operator_pod=True
     )

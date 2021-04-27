@@ -52,6 +52,7 @@ with models.DAG(
         cluster_name=CLUSTER_NAME,
         namespace="dev",
         image="gcr.io/graphical-elf-309911/demoapp1",
+        image_pull_policy='Always',
         name="airflow-test-pod-dev",
     )
     # [END gke_start_pod_operator]
@@ -62,7 +63,8 @@ with models.DAG(
         location=GCP_LOCATION,
         cluster_name=CLUSTER_NAME,
         namespace="test",
-        image="gcr.io/graphical-elf-309911/bqapp@sha256:2bd23691eb5b32b59c16688ae0b270cce41bfc13583e5ab7c11e0267500f8140",
+        image="gcr.io/graphical-elf-309911/bqapp",
+        image_pull_policy='Always'
         name="airflow-test-pod-test",
     )
 
